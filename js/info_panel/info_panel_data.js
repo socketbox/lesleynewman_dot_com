@@ -26,11 +26,7 @@ var edu_info = [
     "Earned Master's degree from the University of Arizona, in Tucson, Arizona",
     "Awarded Fulbright Garcia-Robles grant to study and teach in Oaxaca, Mexico",
     "Accepted English Language Fellow position with Georgetown, University in Da Nang, Vietnam"];
-    /*"Received my Bachelors degree from James Madison University in Harrisonburg, Virginia",
-    "While in undergraduate studies, played Club Field Hockey, participated in several Alternative Spring Break trips, studied abroad, and worked part-time",
-    "Studied Outdoor Education and Women's Literature at Southern Cross University, Lismore, Australia",
-    "Received Master's degree from the University of Arizona, in Tucson, Arizona",
-    "During graduate studies, played intramural soccer, participated as a Peace Corps Fellow fulfilling 1,000 hour community service requirement, represented my cohort in the English Language and Linguistics Student Association as vice-president, then president, and worked part-time",
-    "Received Fulbright Garcia-Robles grant to study and teach in Oaxaca, Mexico"];
-    */
+
 var info_panel_data = {"bio": bio_info, "work": work_info, "edu": edu_info };
+
+

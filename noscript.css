@@ -1,0 +1,23 @@
+#two-column-small
+{
+    display: table;
+    width: inherit;
+    height: 52px;
+    border: 1px solid #633D11;
+}
+
+#static_photo img
+{
+    border: 1px solid #633D11;
+}
+
+#rez_noscript
+{
+   margin-left: 165px;
+}
+
+#cv_noscript
+{
+    margin-left: 185px;
+}
+

@@ -29,7 +29,7 @@ $(document).ready(
         $(document).on("click", "img[alt='biographical info']", overlays.bio, onClickInfoPanel);
         $(document).on("click", "img[alt='work experience']", overlays.work, onClickInfoPanel);
         $(document).on("click", "img[alt='academic accomplishments']", overlays.edu, onClickInfoPanel);
-        $(document).on("click", "img[alt='contact form']", overlays.form, onClickInfoPanel);
+        $(document).on("click", "img[alt='contact Lesley']", overlays.form, onClickInfoPanel);
         $("img[alt='click here to close']").live("click", removeInfoPanel);
 
     }
@@ -67,53 +67,31 @@ function createDivOverlays(info_panel_data)
     }
 
     //create the contact form and put it in the div map
-    $contactForm = constructContactForm();
+    //$contactForm = constructContactForm();
 
 }
 
-function constructContactForm()
+/*function constructContactForm()
 {
-
-    var $subjectField = $('<input type="text" maxlength="128"/>');
-    var $bodyField = $('<input type="textarea" maxlength="1024"/>');
-    var $emailField = null;
-
-    /*if( Modernizr.input.required )
-    {
-        $subjectField.attr("required", "required");
-
-        if( Modernizr.inputtypes.email )
-        {
-           $emailField = $("<email/>");
-        }
-    }
-    else
-    {
-        //put jquery foo here
-    }
-
-    */
-
     var $newDiv = $("<div/>");
     $newDiv.attr("id", "contact_form");
     $newDiv.attr("class", "info_panel");
 
     //now build the form
     var $jqForm = $("<form />");
-
-    var $subjectField = $("<input/>");
-    $subjectField.attr("type", "text");
-    $subjectField.attr("placeholder", "subject");
+    var $emailField = $('<input type="text" maxlength="256"/>');
+    var $subjectField = $('<input type="text" maxlength="128"/>');
+    var $bodyField = $('<input type="textarea" maxlength="1024"/>');
     $jqForm.append($emailField);
     $jqForm.append($subjectField);
+    $jqForm.append($bodyField);
 
-
-    $newDiv.prepend($closeCircle.clone());
+    $newDiv.append($closeCircle.clone());
     $newDiv.append($jqForm);
 
     var keyName = "form";
     Object.defineProperty(overlays, keyName, {value: $newDiv, writeable: true});
-}
+}*/
 
 function removeInfoPanel(event)
 {
@@ -133,4 +111,20 @@ function onClickInfoPanel( event )
         $infoPanel.fadeIn(); }
     );
 };
+
+/*function decodeEmail(str)
+{
+    return str.replace(/[a-zA-Z]/g, function(c){
+            return String.fromCharCode((c <= "Z" ? 90 : 122) >= (c = c.charCodeAt(0) + 13) ? c : c - 26);
+        });
+}*/
+
+function decodeEmail(str)
+{
+    return str.replace(/[a-zA-Z]/g, function(c)
+    {
+        //return String.fromCharCode((c <= "Z" ? 90 : 122) >= (c = c.charCodeAt(0) + 13) ? c : c - 26);
+        return String.fromCharCode((c <= "Z" ? 90 : 122) >= (c = c.charCodeAt(0) + 13) ? c : c - 26);
+    });
+}
 
