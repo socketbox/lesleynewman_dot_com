@@ -7,7 +7,6 @@
  */
 
 var overlays = {};
-//var $closeCircle = null;
 
 //create the close icon
 var $closeCircle = $("<img/>");
@@ -16,6 +15,8 @@ $closeCircle.attr("alt", "click here to close");
 $closeCircle.attr("src", "/images/svg/close_circle.svg");
 $closeCircle.attr("width", "43px");
 $closeCircle.attr("height", "43px");
+
+scrambled_email = "arjzna.yrfyrl@tznvy.pbz";
 
 $(document).ready(
     function()
@@ -29,7 +30,7 @@ $(document).ready(
         $(document).on("click", "img[alt='biographical info']", overlays.bio, onClickInfoPanel);
         $(document).on("click", "img[alt='work experience']", overlays.work, onClickInfoPanel);
         $(document).on("click", "img[alt='academic accomplishments']", overlays.edu, onClickInfoPanel);
-        $(document).on("click", "img[alt='contact Lesley']", overlays.form, onClickInfoPanel);
+        $(document).on("click", "img[alt='contact Lesley']", scrambled_email, mailToDecode);
         $("img[alt='click here to close']").live("click", removeInfoPanel);
 
     }
@@ -112,19 +113,15 @@ function onClickInfoPanel( event )
     );
 };
 
-/*function decodeEmail(str)
+function mailToDecode(str)
 {
-    return str.replace(/[a-zA-Z]/g, function(c){
-            return String.fromCharCode((c <= "Z" ? 90 : 122) >= (c = c.charCodeAt(0) + 13) ? c : c - 26);
-        });
-}*/
-
-function decodeEmail(str)
-{
-    return str.replace(/[a-zA-Z]/g, function(c)
+    var emailArr = '\.|@'.split(str);
+    for (var elem in emailArr)
     {
-        //return String.fromCharCode((c <= "Z" ? 90 : 122) >= (c = c.charCodeAt(0) + 13) ? c : c - 26);
-        return String.fromCharCode((c <= "Z" ? 90 : 122) >= (c = c.charCodeAt(0) + 13) ? c : c - 26);
+        for (var char in elem.split("")) 
+        {
+            console.log(char);
+        }
     });
 }
 
