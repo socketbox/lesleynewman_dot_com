@@ -22,10 +22,10 @@ var work_info = [
 
 var edu_info = [
     "Bachelor's degree from James Madison University in Harrisonburg, Virginia",
-    "Courses in Outdoor Education and Women's Literature at Southern Cross University, Lismore, Australia",
+    "Courses in Outdoor Education and Women's Literature at Southern Cross University in Lismore, Australia",
     "Earned Master's degree from the University of Arizona, in Tucson, Arizona",
     "Awarded Fulbright Garcia-Robles grant to study and teach in Oaxaca, Mexico",
-    "Accepted English Language Fellow position with Georgetown, University in Da Nang, Vietnam"];
+    "Accepted English Language Fellow position with Georgetown University in Da Nang, Vietnam"];
 
 var info_panel_data = {"bio": bio_info, "work": work_info, "edu": edu_info };
 

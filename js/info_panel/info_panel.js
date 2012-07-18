@@ -113,9 +113,10 @@ function onClickInfoPanel( event )
     var $infoPanel = event.data;
     var $page = $("div#page");
 
-    $page.hide(0, function(){
+    $page.fadeOut(1000, function(){
+        $infoPanel.css("display","none");
         $("#wrapper").prepend( $infoPanel );
-        $infoPanel.fadeIn(); }
+        $infoPanel.fadeIn(1000, null); }
     );
 };
 
