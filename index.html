@@ -23,21 +23,27 @@
     </head>
     <body>
         <noscript>
-            <meta HTTP-EQUIV="REFRESH" content="0; url=/index_noscript.html">
+            <meta HTTP-EQUIV="REFRESH" content="0; url=index_noscript.html">
         </noscript>
+        <script type="text/javascript">
+            if (!Modernizr.svg)
+            {
+                document.location = "index_noscript.html";
+            }
+        </script>
         <div id="wrapper">
             <div id="page">
                 <div style="width: 820px"><img src="images/svg/lpn-logo.svg" alt="Logo for Lesley Newman site" width="405"></div>
                 <div id="album">
-                    <div><img title="" src="images/showoff/album_5.jpg" width="820" height="250" alt="Lesley with class"/></div>
                     <div><img title="" src="images/showoff/album_2.jpg" width="820" height="250" alt="Lesley with class"/></div>
+                    <div><img title="" src="images/showoff/album_5.jpg" width="820" height="250" alt="Lesley with class"/></div>
                     <div><img title="" src="images/showoff/album_6.jpg" width="820" height="250" alt="Lesley with class"/></div>
                     <div><img title="" src="images/showoff/album_1.jpg" width="820" height="250" alt="Lesley with class"/></div>
                 </div>
                 <div id="three-column">
                     <div id="bio">
-                        <div><img src="images/svg/lpn-info_bio.svg" alt="biographical info" id="bio_header_svg"/></div>
-                        <img src="images/svg/bio.svg" alt="biographical info" id="bio_svg_icon">
+                        <div><img src="images/svg/lpn-info_bio.svg" alt="biographical info"/></div>
+                        <img src="images/svg/bio.svg" alt="biographical info" id="bio_svg_icon" class="bio_svg">
                     </div>
                     <div id="work">
                         <div><img src="images/svg/lpn-info_work.svg" alt="work experience"/></div>
@@ -51,7 +57,7 @@
             </div>
             <div id="about">
                 <div id="three-column-small">
-                    <a href="#">
+                    <a href="#" title="contact Lesley">
                         <img src="images/svg/about_lpn_bar_contact_form.svg"
                              alt="contact Lesley" class="small_icon"/>
                     </a>

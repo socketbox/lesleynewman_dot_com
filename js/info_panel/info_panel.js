@@ -28,9 +28,15 @@ $(document).ready(
           pass in fully-formed and category-specific div as event.data
         */
         $(document).on("click", "img[alt='biographical info']", overlays.bio, onClickInfoPanel);
+        $("img[alt='biographical info']").css('cursor','pointer');
+
         $(document).on("click", "img[alt='work experience']", overlays.work, onClickInfoPanel);
+        $("img[alt='work experience']").css('cursor','pointer');
+
         $(document).on("click", "img[alt='academic accomplishments']", overlays.edu, onClickInfoPanel);
-        $(document).on("click", "img[alt='contact Lesley']", scrambled_email, mailToDecode);
+        $("img[alt='academic accomplishments']").css('cursor','pointer');
+
+        $(document).on("click", "a[title='contact Lesley']", scrambled_email, mailToDecode);
         $("img[alt='click here to close']").live("click", removeInfoPanel);
 
     }
@@ -113,15 +119,48 @@ function onClickInfoPanel( event )
     );
 };
 
-function mailToDecode(str)
+function mailToDecode(event)
 {
-    var emailArr = '\.|@'.split(str);
-    for (var elem in emailArr)
+    var obfuscAddress = event.data;
+    var realEmailAddress = "";
+
+    var emailArr = obfuscAddress.split(/[.@]/);
+    console.log(emailArr.length);
+
+    for (var i=0; i < emailArr.length; i++)
     {
-        for (var char in elem.split("")) 
+        var emailPart = emailArr[i];
+
+        var newCharArr = new Array( emailPart.length );
+        var startCharVal = 0;
+
+        for (var n=0;n<emailPart.length;n++)
         {
-            console.log(char);
+            //reverse each character
+            startCharVal = emailPart.charCodeAt(n);
+            if( startCharVal > 96 && startCharVal < 110 )
+            {
+                newCharArr[n] = String.fromCharCode(startCharVal + 13)
+            }
+            else if ( startCharVal > 109 && startCharVal < 123 )
+            {
+                newCharArr[n] = String.fromCharCode(startCharVal - 13)
+            }
         }
-    });
-}
+        realEmailAddress += newCharArr.join("");
+
+        if( i % 2 === 0)
+        {
+            realEmailAddress += ".";
+        }
+        else if (i === 1)
+        {
+            realEmailAddress += "@";
+        }
+
+    };
+
+    this.href = "mailto:" + realEmailAddress;
+    this.trigger("click");
+};
 
