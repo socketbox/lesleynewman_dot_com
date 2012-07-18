@@ -12,7 +12,7 @@ var overlays = {};
 var $closeCircle = $("<img/>");
 $closeCircle.attr("class", "close_svg");
 $closeCircle.attr("alt", "click here to close");
-$closeCircle.attr("src", "/images/svg/close_circle.svg");
+$closeCircle.attr("src", "images/svg/close_circle.svg");
 $closeCircle.attr("width", "43px");
 $closeCircle.attr("height", "43px");
 
