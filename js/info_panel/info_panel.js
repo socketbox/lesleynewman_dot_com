@@ -12,21 +12,46 @@ var overlays = {};
 var $closeCircle = $("<img/>");
 $closeCircle.attr("class", "close_svg");
 $closeCircle.attr("alt", "click here to close");
-$closeCircle.attr("src", "images/svg/close_circle.svg");
-$closeCircle.attr("width", "43px");
-$closeCircle.attr("height", "43px");
+$closeCircle.attr("src", "images/png/trans.png");
+$closeCircle.attr("width", "46px");
+$closeCircle.attr("height", "46px");
 
 scrambled_email = "arjzna.yrfyrl@tznvy.pbz";
 
 $(document).ready(
     function()
     {
-        //info_panel_data is gotten from the js file of the same name
-        createDivOverlays(info_panel_data);
+        //tell IE 6 & 7 users that they need to stop living in the Stone Age
+        var ua = $.browser;
+        var ua_ver = ua.version.charAt(0);
 
-        /*on ready, put click handlers on icons and label svgs;
-          pass in fully-formed and category-specific div as event.data
+        if( ua.msie )
+            if( ua_ver === "7" || ua_ver === "6")
+                $.location.href("http://www.browsehappy.com");
+
+        //preload images to avoid delays on loading when event is triggered
+
+
+        //info_panel_data is gotten from the js file of the same name
+        createInfoPanels(info_panel_data);
+
+        /*eat dblcklick to be on safe side
+        //note that this is not a trivial problem when some elements still need
+        //to trigger a single-click event
+        //see: http://stackoverflow.com/a/1067484/148680
+        //$(document).on("dblclick", "*", null, function(e){e.preventDefault()});
         */
+
+        /*
+        // on ready, do the following:
+        // 0. put a hover handler on all button images
+        // 1. put click handlers on icons and label svgs; passing in fully-
+                formed and category-specific div as event.data
+        // 2. make sure the cursor becomes a hand/pointer when the mouse is over the element
+        // 3. attach a hover animation
+        */
+        $(".text_sprite,.lg_sprite").hover(triggerHoverPair);
+
         $(document).on("click", "img[alt='biographical info']", overlays.bio, onClickInfoPanel);
         $("img[alt='biographical info']").css('cursor','pointer');
 
@@ -42,11 +67,11 @@ $(document).ready(
     }
 );
 
-function createDivOverlays(info_panel_data)
+function createInfoPanels(info_panel_data)
 {
     var $newDiv = null;
     var factArray = null;
-    //returns ["bio","work","edu"]
+    //the following returns ["bio","work","edu"]
     var keys = Object.keys(info_panel_data);
 
     var keyName = null;
@@ -113,12 +138,45 @@ function onClickInfoPanel( event )
     var $infoPanel = event.data;
     var $page = $("div#page");
 
-    $page.fadeOut(1000, function(){
+    $page.fadeOut(500, function(){
         $infoPanel.css("display","none");
         $("#wrapper").prepend( $infoPanel );
         $infoPanel.fadeIn(1000, null); }
     );
 };
+
+function triggerHoverPair(event)
+{
+    var altStr = $(this).attr("alt");
+
+    var pair = $("img[alt='" + altStr + "']");
+    var $img = null;
+    var pattern = new RegExp("^(\\w{3,4})(_\\w{2,4})(_sprite)(_hover)?$", "g");
+    var $imgClasses = null;
+    for (var i=0; i<pair.length; i++)
+    {
+        $img = $(pair[i]);
+        $imgClasses = $img.attr("class").split(" ");
+        var newClass = null;
+        var result = null;
+        for (var n=0; n<$imgClasses.length; n++)
+        {
+            result = pattern.exec($imgClasses[n]);
+            if(result)
+            {
+                newClass = result[1] + result[2] + result[3];
+                //check array length, then check for undef and/or null in 5th elem
+                if( result.input.length - result.input.lastIndexOf("_sprite") === "_sprite".length)
+                {
+                    newClass += "_hover";
+                }
+            }
+        }
+        $img.toggleClass(result.input);
+        $img.toggleClass(newClass);
+    }
+    console.log("debug");
+}
 
 function mailToDecode(event)
 {

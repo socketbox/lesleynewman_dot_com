@@ -34,10 +34,6 @@ License: 	Dual licensed under the MIT and GPL licenses.
     -moz-border-radius: 6px;
 }
 
-p.jshowoff-controls {
-    display: none
-}
-
 .jshowoff-slidelinks {
     bottom: -8px;
     position: absolute;

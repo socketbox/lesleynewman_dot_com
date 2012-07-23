@@ -11,8 +11,6 @@ jShowOff Options
 animatePause :		whether to use 'Pause' animation text when pausing [boolean, defaults to true]
 autoPlay :			whether to start playing immediately [boolean, defaults to true]
 changeSpeed :		speed of transition [integer, milliseconds, defaults to 600]
-controls :			whether to create & display controls (Play/Pause, Previous, Next) [boolean, defaults to true]
-controlText :		custom text for controls [object, 'play', 'pause', 'previous' and 'next' properties]
 cssClass :			custom class to add to .jshowoff wrapper [string]
 effect :			transition effect [string: 'fade', 'slideLeft' or 'none', defaults to 'fade']
 hoverPause :		whether to pause on hover [boolean, defaults to true]
@@ -31,13 +29,13 @@ speed :				time each slide is shown [integer, milliseconds, defaults to 3000]
 			animatePause : true,
 			autoPlay : true,
 			changeSpeed : 600,
-			controls : true,
+			/*controls : true,
 			controlText : {
 				play :		'Play',
 				pause :		'Pause',
 				next :		'Next',
 				previous :	'Previous'
-			},
+			},*/
 			effect : 'fade',
 			hoverPause : true,
 			links : true,
@@ -81,13 +79,13 @@ speed :				time each slide is shown [integer, milliseconds, defaults to 3000]
 			// preload slide images into memory
 			preloadImg();
 			
-			// add controls
+			/* add controls
 			if(config.controls){
 				addControls();
 				if(config.autoPlay==false){
 					$('.'+uniqueClass+'-play').addClass(uniqueClass+'-paused jshowoff-paused').text(config.controlText.play);
 				};
-			};
+			};*/
 			
 			// add slide links
 			if(config.links){
@@ -233,7 +231,7 @@ speed :				time each slide is shown [integer, milliseconds, defaults to 3000]
 				});
 			};
 				
-			// generate and add play/pause, prev, next controls
+			/* generate and add play/pause, prev, next controls
 			function addControls() {
 				$wrap.append('<p class="jshowoff-controls '+uniqueClass+'-controls"><a class="jshowoff-play '+uniqueClass+'-play" href="#null">'+config.controlText.pause+'</a> <a class="jshowoff-prev '+uniqueClass+'-prev" href="#null">'+config.controlText.previous+'</a> <a class="jshowoff-next '+uniqueClass+'-next" href="#null">'+config.controlText.next+'</a></p>');
 				$('.'+uniqueClass+'-controls a').each(function(){
@@ -242,7 +240,7 @@ speed :				time each slide is shown [integer, milliseconds, defaults to 3000]
 						if($(this).hasClass('jshowoff-next')) $(this).click(function(){ next(); return false; });
 
 				});
-			};
+			}; */
 
 			// generate and add slide links
 			function addSlideLinks() {
