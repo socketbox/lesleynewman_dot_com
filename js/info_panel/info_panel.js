@@ -27,7 +27,10 @@ $(document).ready(
 
         if( ua.msie )
             if( ua_ver === "7" || ua_ver === "6")
-                $.location.href("http://www.browsehappy.com");
+            {
+                $(document).pngFix();
+                //$.location.href("http://www.browsehappy.com");
+            }
 
         //preload images to avoid delays on loading when event is triggered
 
