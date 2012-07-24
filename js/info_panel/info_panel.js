@@ -21,7 +21,10 @@ scrambled_email = "arjzna.yrfyrl@tznvy.pbz";
 $(document).ready(
     function()
     {
-        //tell IE 6 & 7 users that they need to stop living in the Stone Age
+
+        $(document).pngFix();
+
+        /*tell IE 6 & 7 users that they need to stop living in the Stone Age
         var ua = $.browser;
         var ua_ver = ua.version.charAt(0);
 
@@ -31,6 +34,7 @@ $(document).ready(
                 $(document).pngFix();
                 //$.location.href("http://www.browsehappy.com");
             }
+        */
 
         //preload images to avoid delays on loading when event is triggered
 
