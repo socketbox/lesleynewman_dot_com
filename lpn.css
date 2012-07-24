@@ -170,7 +170,7 @@ a:hover
     border: 2px solid #633D11;
 }
 
-#three-column-small
+#three-column-small div
 {
     width: 275px;
     display: table-cell;
