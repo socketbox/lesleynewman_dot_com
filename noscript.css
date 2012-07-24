@@ -13,11 +13,18 @@
 
 #rez_noscript
 {
+   margin-top: 10px;
    margin-left: 165px;
 }
 
 #cv_noscript
 {
+    margin-top: 10px;
     margin-left: 185px;
 }
 
+#enable_javascript
+{
+    font-size: 14pt;
+    font-weight: bold;
+}

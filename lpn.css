@@ -91,7 +91,7 @@ a:hover
 	line-height: normal;
 	text-transform: lowercase;
 	text-align: center;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Raleway', 'Arial', 'Helvetica', 'Geneva', sans-serif;
     font-size: 10pt;
 	color: #633D11;
 }
@@ -170,12 +170,13 @@ a:hover
     border: 2px solid #633D11;
 }
 
-#three-column-small div
+#three-column-small
 {
     width: 275px;
     display: table-cell;
     padding-top: 8px;
     padding-bottom: 5px;
+    border: none;
 }
 
 #contact_lesley_container
