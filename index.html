@@ -7,10 +7,9 @@
         <title>Lesley Pryor Newman</title>
         <link href='http://fonts.googleapis.com/css?family=Raleway:100&subset=latin,latin-ext,vietnamese' rel='stylesheet' type='text/css'>
         <link href="js/showoff/jshowoff.css" rel="stylesheet" type="text/css" media="screen" />
-        <link href="lpn.css" rel="stylesheet" type="text/css" media="screen" />
+        <link href="css/lpn.css" rel="stylesheet" type="text/css" media="screen" />
         <script src="js/jquery-1.7.2.min.js" type="text/javascript"></script>
         <script src="js/showoff/jquery.jshowoff.modified.js" type="text/javascript"></script>
-        <script src="js/pngFix/jquery.pngFix.js" type="text/javascript"></script>
         <script src="js/info_panel/info_panel_data.js" type="text/javascript"></script>
         <script src="js/info_panel/info_panel.js" type="text/javascript"></script>
         <script type="text/javascript">
@@ -19,11 +18,26 @@
                 hoverPause: false};
 
             $(document).ready(function(){ $('#album').jshowoff(jsoff_args); });
+
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-33703270-1']);
+            _gaq.push(['_setDomainName', 'lesleynewman.com']);
+            _gaq.push(['_setAllowLinker', true]);
+            _gaq.push(['_trackPageview']);
+
+            (function() {
+              var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+              ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+              var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+
         </script>
     </head>
     <body>
-        <!--[if lte IE 6]>
-            <script type="text/javascript" src="js/supersleight-min.js"></script>
+        <!--[if lt IE 7]>
+            <script type="text/javascript">
+                window.location.href="index_ie.html";
+            </script>
         <![endif]-->
         <noscript>
             <meta HTTP-EQUIV="REFRESH" content="0; url=index_noscript.html">
@@ -32,12 +46,10 @@
             <div id="page">
                 <div style="width: 820px"><img src="images/png/lpn-logo.png" alt="Logo for Lesley Newman site" width="405"></div>
                 <div id="album">
-                    <div><img title="" src="images/showoff/album_2.jpg" width="820" height="250" alt="Lesley with class"/></div>
+                    <div><img title="" src="images/showoff/album_8.jpg" width="820" height="250" alt="Lesley with class"/></div>
                     <div><img title="" src="images/showoff/album_5.jpg" width="820" height="250" alt="Lesley with class"/></div>
                     <div><img title="" src="images/showoff/album_6.jpg" width="820" height="250" alt="Lesley with class"/></div>
-                    <div><img title="" src="images/showoff/album_8.jpg" width="820" height="250" alt="Lesley with class"/></div>
                     <div><img title="" src="images/showoff/album_1.jpg" width="820" height="250" alt="Lesley with class"/></div>
-                    <div><img title="" src="images/showoff/album_7.jpg" width="820" height="250" alt="Lesley with class"/></div>
                 </div>
                 <div id="three-column">
                     <div id="bio">
@@ -82,7 +94,7 @@
             </div>
         </div>
         <div id="footer">
-            <p>Copyright (c) 2012 lesleynewman.com. All rights reserved.&nbsp;</p>
+            <p id="copyright">Copyright (c) 2012 lesleynewman.com. All rights reserved.&nbsp;</p>
         </div>
     </body>
 </html>

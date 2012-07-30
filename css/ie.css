@@ -1,0 +1,47 @@
+body
+{
+    font-family: Arial, sans-serif;
+    background-color: #F3EEE2;
+    color: #633D11;
+}
+
+a:link
+{
+    color: #633D11;
+}
+
+a:hover
+{
+    color: red;
+}
+
+#page
+{
+	overflow: hidden;
+	width: 860px;
+    margin: 20px auto 0;
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+#footer
+{
+	overflow: hidden;
+	width: 860px;
+    margin: 0 auto 0;
+    padding: 20px 20px;
+    text-align: center;
+}
+
+#copyright
+{
+    font-size: 10pt;
+}
+
+#upgrade_browser
+{
+    font-size: 14pt;
+    font-style: italic;
+}
+

@@ -91,11 +91,12 @@ function createInfoPanels(info_panel_data)
         $newDiv.attr("class", "info_panel");
         factArray = Object.getOwnPropertyDescriptor(info_panel_data, keyName).value;
         var fact = null;
+        var htmlContent = null;
         for (var f in factArray)
         {
            fact = factArray[f];
            $newDiv.html(function(index, oldHtml){
-               var htmlContent = oldHtml + "<p>" + fact + "</p>";
+               htmlContent = oldHtml + "<p>" + fact + "</p>";
                return htmlContent;
            });
         }
