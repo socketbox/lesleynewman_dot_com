@@ -21,24 +21,6 @@ scrambled_email = "arjzna.yrfyrl@tznvy.pbz";
 $(document).ready(
     function()
     {
-
-        $(document).pngFix();
-
-        /*tell IE 6 & 7 users that they need to stop living in the Stone Age
-        var ua = $.browser;
-        var ua_ver = ua.version.charAt(0);
-
-        if( ua.msie )
-            if( ua_ver === "7" || ua_ver === "6")
-            {
-                $(document).pngFix();
-                //$.location.href("http://www.browsehappy.com");
-            }
-        */
-
-        //preload images to avoid delays on loading when event is triggered
-
-
         //info_panel_data is gotten from the js file of the same name
         createInfoPanels(info_panel_data);
 
@@ -183,7 +165,6 @@ function triggerHoverPair(event)
         $img.toggleClass(result.input);
         $img.toggleClass(newClass);
     }
-    console.log("debug");
 }
 
 function mailToDecode(event)
