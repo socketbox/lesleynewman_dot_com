@@ -50,8 +50,9 @@ a:hover
     border-radius: 6px;
     -webkit-border-radius: 6px;
     -moz-border-radius: 6px;
-    font-family: 'Arial','Helvetica','Geneva', sans-serif;
+    font-family: "Helvetica","Arial","Geneva",sans-serif;
     font-size: 18pt;
+    font-weight: 100;
 }
 
 /* don't change this to an id or you'll have multiple elements with eq. ids*/
