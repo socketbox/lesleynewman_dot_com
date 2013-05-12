@@ -7,18 +7,18 @@
  */
 
 var bio_info = [
-    "Lived in Virginia; Portland, Oregon; New York City, New York; and Tucson, Arizona in the United States",
-    "Has also resdided in Lismore, Australia; Dajabon, Dominican Republic; Oaxaca, Mexico; and Danang, Vietnam",
-    "Visited Vancouver, Canada; North Island, New Zealand; San Salvador, El Salvador; Bogota and Medellín, Colombia",
+    "Has lived and worked in Virginia, Oregon, New York, and Arizona in the United States",
+    "Has also resided in Australia, the Dominican Republic, Mexico, and Vietnam",
+    "Has traveled to China, Malaysia, Singapore, Canada, New Zealand, El Salvador, and Colombia",
     "Enjoys rock climbing, hiking, camping, and, of course, traveling",
     "Likes to watch good movies (always with popcorn), finish crossword puzzles, and win at Scrabble"];
 
 var work_info = [
-    "Taught English for community programs in New York City, New York; Tucson and Nogales, Arizona; and Sonora, Mexico",
-    "English instructor at the university level: CESL and Pima Community College Intensive English Programs, Tucson, Arizona",
-    "Trained teachers in the Dominican Republic and online for Chungnam University, Korea",
-    "Presented on developing writing and critical thinking skills in language classrooms",
-    "Experience in developing curricula, training and managing volunteers, planning projects, recruiting, and translation"];
+    "Has taught English for community programs in New York City, New York; Tucson and Nogales, Arizona; and Sonora, Mexico",
+    "Is an English instructor at the university level: Danang University, Danang, Vietnam; University of Arizona and and Pima Community College Intensive English Programs, Tucson, Arizona",
+    "Has trained teachers in Vietnam, the Dominican Republic, and online for Chungnam University, Korea",
+    "Has presented on diverse topics in language acquisition studies",
+    "Has additional experience in developing curricula, training and managing volunteers, planning projects, recruiting, and Spanish-English translation"];
 
 var edu_info = [
     "Bachelor's degree from James Madison University in Harrisonburg, Virginia",
